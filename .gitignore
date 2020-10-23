@@ -1,0 +1,30 @@
+# PhpStorm
+/.idea
+
+# PHPUnit
+phpunit.xml
+.phpunit.result.cache
+
+# Environment
+.env
+.env.backup
+
+# Node
+/node_modules
+npm-debug.log
+
+# Yarn
+yarn-error.log
+
+# Composer
+/vendor
+
+# Homestead
+Homestead.json
+Homestead.yaml
+
+# Laravel
+/public/hot
+/public/storage
+/storage/*.key
+
