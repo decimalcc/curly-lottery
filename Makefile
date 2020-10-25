@@ -23,7 +23,7 @@ setup: ## Setup the system
 	@printf "127.0.0.1 slotegrator.local\n" >> /etc/hosts
 	@cp .env.example .env
 	@docker-compose up -d
-	@docker-compose exec php php composer install
+	@docker-compose exec php composer install
 	@docker-compose exec php php artisan migrate
 	@printf '\033[0;32mThe system was successfully setup\n'
 

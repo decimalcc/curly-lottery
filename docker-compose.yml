@@ -15,6 +15,8 @@ services:
     volumes:
       - ./:/var/www
       - ./docker/php/config/local.ini:/usr/local/etc/php/conf.d/local.ini
+    environment:
+      PHP_IDE_CONFIG: "serverName=slotegrator.local"
     networks:
       - slotegrator
 
@@ -61,6 +63,10 @@ services:
 networks:
   slotegrator:
     driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.220.0/28
 
 # Volumes
 # Volumes
