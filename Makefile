@@ -23,6 +23,7 @@ setup: ## Setup the system
 	@printf "127.0.0.1 slotegrator.local\n" >> /etc/hosts
 	@cp .env.example .env
 	@docker-compose up -d
+	@docker-compose exec php php composer install
 	@docker-compose exec php php artisan migrate
 	@printf '\033[0;32mThe system was successfully setup\n'
 
@@ -46,6 +47,5 @@ bash: ## The application container bash
 	@printf '\033[0;32mStarting system bash...\033[0m\n'
 	@docker-compose exec php bash
 
-list: # List of the system containers
+list: ## List of the system containers
 	@docker-compose ps
-
