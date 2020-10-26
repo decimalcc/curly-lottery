@@ -21,7 +21,7 @@ help:
 setup: ## Setup the system
 	@printf "\n# Slotegrator test task hosts\n" >> /etc/hosts
 	@printf "127.0.0.1 slotegrator.local\n" >> /etc/hosts
-	@cp .env.example .env
+	@cp -rp .env.example .env
 	@docker-compose up -d
 	@docker-compose exec php composer install
 	@docker-compose exec php php artisan migrate
@@ -38,6 +38,10 @@ stop: ## Stop the system containers
 restart: ## Restart the system containers
 	@docker-compose restart
 	@printf '\033[0;32mThe system restarted successfully\n'
+
+rebuild: ## Rebuild the system containers
+	@docker-compose up -d --build
+	@printf '\033[0;32mThe system rebuild successfully\n'
 
 remove: ## Remove the system containers
 	@docker-compose rm -s
