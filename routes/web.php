@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LotteryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard');
-})->middleware(['auth:sanctum', 'verified'])->name('lottery');
+// Lottery
+Route::get('lottery', [LotteryController::class, 'index'])
+    ->middleware(['auth:sanctum', 'verified'])
+    ->name('lottery');

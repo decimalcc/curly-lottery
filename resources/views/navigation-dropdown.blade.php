@@ -2,7 +2,7 @@
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
-            <div class="flex">
+            <div class="flex w-full">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="{{ route('lottery') }}">
@@ -16,6 +16,11 @@
                         {{ __('Lottery') }}
                     </x-jet-nav-link>
                 </div>
+            </div>
+
+            <div class="flex justify-center items-center justify-self-end">
+                <span>{{ __('Bonus') }}:</span>
+                <span class="ml-1 text-green-500 font-semibold">{{ Auth::user()->bonuses }}</span>
             </div>
 
             <!-- Settings Dropdown -->
