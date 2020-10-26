@@ -24,7 +24,7 @@ setup: ## Setup the system
 	@cp -rp .env.example .env
 	@docker-compose up -d
 	@docker-compose exec php composer install
-	@docker-compose exec php php artisan migrate
+	@docker-compose exec php php artisan migrate:fresh --seed
 	@printf '\033[0;32mThe system was successfully setup\n'
 
 start: ## Start the system

@@ -4,11 +4,7 @@ namespace App\Components\Lottery;
 
 use App\Components\Lottery\Prizes\PrizeFactory;
 use App\Components\Lottery\Prizes\Types\Base\AbstractPrize;
-use App\Components\Lottery\Prizes\Types\BonusPrize;
-use App\Components\Lottery\Prizes\Types\MoneyPrize;
-use App\Components\Lottery\Prizes\Types\ThingPrize;
 use App\Repositories\Interfaces\SettingsRepositoryInterface;
-use App\Repositories\Interfaces\ThingRepositoryInterface;
 use App\Repositories\ThingRepository;
 
 class Lottery

@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Redirect to lottery
+Route::get('/', function () {
+    return redirect('lottery');
+});
+
 // Lottery
 Route::get('lottery', [LotteryController::class, 'index'])
     ->middleware(['auth:sanctum', 'verified'])
